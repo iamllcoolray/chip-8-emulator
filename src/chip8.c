@@ -108,6 +108,10 @@ void chip8_emulate_cycle(chip8 *c)
                     c->pc += 2;
                 break;
 
+                case 0x00FE: // SCHIP: Disable extended screen mode (no-op for now)
+                    c->pc += 2;
+                break;
+
                 default:
                     fprintf(stderr, "Unknown opcode [0x0000]: 0x%X\n", c->opcode);
             }
